@@ -1,9 +1,11 @@
 from django.urls import path, include
+from django.views.generic import RedirectView
 from rest_framework.urlpatterns import format_suffix_patterns
 from rest_framework.authtoken.views import obtain_auth_token
 from api import views
 
 api_patterns = [
+    path('', RedirectView.as_view(url='admin/login/')),
     path('api-auth/', include('rest_framework.urls')),
     path('api-token-auth/', obtain_auth_token),
 ]
