@@ -7,7 +7,7 @@ Projeto foi desenvolvido usando as seguintes tecnologias:
 
 - [Python](https://www.python.org/)
 - [Django](https://docs.djangoproject.com/)
-- [DjangoRestFramework](https://www.django-rest-framework.org/)
+- [Django Rest Framework](https://www.django-rest-framework.org/)
 - [TypeScript](https://www.typescriptlang.org/)
 - [Angular](https://angular.io/)
 
