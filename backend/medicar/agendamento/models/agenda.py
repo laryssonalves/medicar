@@ -34,9 +34,10 @@ class Agenda(models.Model):
 
     @staticmethod
     def agendas_validas(especialidades, medicos, data_inicio, data_final):
+        hora = datetime.now().replace(second=0).time()
         agendas_validas = [
             x['agenda_id'] for x in
-            AgendaHorario.objects.filter(consulta__isnull=True).values('agenda_id').distinct()
+            AgendaHorario.objects.filter(consulta__isnull=True, hora__gt=hora).values('agenda_id').distinct()
         ]
         agendas = Agenda.objects.filter(pk__in=agendas_validas)
         agendas = agendas.filter(
