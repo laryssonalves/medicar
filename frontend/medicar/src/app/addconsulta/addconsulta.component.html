@@ -1,0 +1,54 @@
+<div class="center-container">
+
+  <div id="register-container">
+    <section>
+      <h3 class="title-screen">Nova Consulta</h3>
+      <form [formGroup]="consultaForm" (ngSubmit)="onSubmitForm()">
+          <select formControlName="especialidade" (change)="onEspecialidadeChange()">
+            <option [ngValue]="null" hidden>Especialidade</option>
+            <option *ngFor="let especialidade of especialidades" [ngValue]="especialidade.id">
+              {{ especialidade.nome }}
+            </option>
+          </select>
+          <div *ngIf="submitted && consultaForm.controls.especialidade.errors" class="validation-helper">
+            <span *ngIf="consultaForm.controls.especialidade.errors.required">Campo obrigatório.</span>
+          </div>
+          <select formControlName="medico" (change)="onMedicoChange()">
+            <option [ngValue]="null" hidden>Médico</option>
+            <option *ngFor="let medico of medicos" [ngValue]="medico.id">
+              {{ medico.nome }}
+            </option>
+          </select>
+          <div *ngIf="submitted && consultaForm.controls.medico.errors" class="validation-helper">
+            <span *ngIf="consultaForm.controls.medico.errors.required">Campo obrigatório.</span>
+          </div>
+          <select formControlName="agenda" (change)="onAgendaChange()">
+            <option [ngValue]="null" hidden>Data</option>
+            <option *ngFor="let agenda of agendas" [ngValue]="agenda">
+              {{ agenda.dia | date:'dd/MM/yyyy' }}
+            </option>
+          </select>
+          <div *ngIf="submitted && consultaForm.controls.agenda.errors" class="validation-helper">
+            <span *ngIf="consultaForm.controls.agenda.errors.required">Campo obrigatório.</span>
+          </div>
+          <select formControlName="hora">
+            <option [ngValue]="null" hidden>Hora</option>
+            <option *ngFor="let hora of horarios" [ngValue]="hora">
+              {{ hora }}
+            </option>
+          </select>
+          <div *ngIf="submitted && consultaForm.controls.agenda.errors" class="validation-helper">
+            <span *ngIf="consultaForm.controls.agenda.errors.required">Campo obrigatório.</span>
+          </div>
+          <div class="button-container">
+            <button class="btn btn-secondary" [routerLink]="'/home'" type="button">
+              Cancelar
+            </button>
+            <button class="btn btn-primary" [disabled]="!consultaForm.valid">
+              Confirmar
+            </button>
+          </div>
+      </form>
+    </section>
+  </div>
+</div>

@@ -1,0 +1,139 @@
+/* You can add global styles to this file, and also import other style files */
+
+:root {
+  --primary-color: #49b4bb;
+  --secondary-color: white;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+/* Button */
+
+button {
+  border: none;
+  outline: none;
+}
+
+button:active:not(.btn-delete) {
+  box-shadow: 0 8px #666;
+  transform: translateY(4px);
+}
+
+.center-container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.top-container {
+  height: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.btn {
+  cursor: pointer;
+  width: 180px;
+  height: 40px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.btn-primary {
+  color: white;
+  background: var(--primary-color);
+}
+
+.btn-primary:hover {
+  background: #49b4ff;
+}
+
+.btn-primary:disabled {
+  background: #d9f1f3;
+}
+
+.btn-secondary {
+  color: #49b4bb;
+  background: var(--secondary-color);
+}
+
+.btn-secondary:hover {
+  background: #d9f1f3;
+}
+
+/* Checkbox */
+
+input[type="checkbox"].checkbutton {
+  height: 0;
+  width: 0;
+}
+
+input[type="checkbox"].checkbutton + label.checkbutton-label {
+  padding-left: 25px;
+  display: inline-block;
+  background-repeat: no-repeat;
+  font-size: 14px;
+  cursor: pointer;
+  color: #a8a8a8;
+  background-image: url("assets/checkbox.png");
+}
+
+input[type="checkbox"].checkbutton:checked + label.checkbutton-label {
+  background-position: 0 -20px;
+}
+
+/* Inputs */
+
+input {
+  border: 1px solid #a8a8a8;
+  box-sizing: border-box;
+  border-radius: 4px;
+  font-size: 14px;
+  color: #a8a8a8;
+  text-indent: 8px;
+}
+
+input:focus {
+  outline: none;
+  border: 1px solid var(--primary-color);
+}
+
+input:not([type="checkbox"]) {
+  width: 400px;
+  height: 40px;
+  margin-top: 10px;
+}
+
+/* Form Section */
+section form {
+  display: flex;
+  flex-direction: column;
+}
+
+section form .button-container {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 32px;
+}
+
+.validation-helper {
+  display: flex;
+  flex-direction: column;
+}
+
+.validation-helper span {
+  margin: 5px 0 0 5px;
+  color: red;
+}

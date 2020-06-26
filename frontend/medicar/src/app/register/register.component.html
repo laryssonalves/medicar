@@ -1,0 +1,53 @@
+<div class="center-container">
+
+  <div id="register-container">
+
+    <header>
+      <img src="assets/logo.svg" />
+      <h3 class="title-screen">Crie sua conta</h3>
+    </header>
+
+    <section>
+      <form [formGroup]="registerForm" (ngSubmit)="onSubmitForm()">
+          <input
+            type="text"
+            placeholder="Nome"
+            formControlName="firstName"/>
+          <div *ngIf="submitted && registerForm.controls.firstName.errors" class="validation-helper">
+            <span *ngIf="registerForm.controls.firstName.errors.required">Campo obrigatório.</span>
+          </div>
+          <input
+            type="email"
+            placeholder="Email"
+            formControlName="email"/>
+          <div *ngIf="submitted && registerForm.controls.email.errors" class="validation-helper">
+            <span *ngIf="registerForm.controls.email.errors.required">Campo obrigatório.</span>
+            <span *ngIf="registerForm.controls.email.errors.email">Email informado é inválido.</span>
+          </div>
+          <input
+            type="password"
+            placeholder="Senha"
+            formControlName="password"/>
+          <div *ngIf="submitted && registerForm.controls.password.errors" class="validation-helper">
+            <span *ngIf="registerForm.controls.password.errors.required">Campo obrigatório.</span>
+          </div>
+          <input
+            type="password"
+            placeholder="Confirmar Senha"
+            formControlName="confirmpassword"/>
+          <div *ngIf="submitted && registerForm.controls.confirmpassword.errors" class="validation-helper">
+            <span *ngIf="registerForm.controls.confirmpassword.errors.mustMatch">Campo obrigatório.</span>
+            <span *ngIf="registerForm.controls.confirmpassword.errors.mustMatch">As senhas devem ser iguais.</span>
+          </div>
+          <div class="button-container">
+            <button class="btn btn-secondary" [routerLink]="'/login'" type="button">
+              Cancelar
+            </button>
+            <button class="btn btn-primary">
+              Confirmar
+            </button>
+          </div>
+      </form>
+    </section>
+  </div>
+</div>

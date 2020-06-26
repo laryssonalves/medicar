@@ -1,0 +1,34 @@
+section {
+  display: flex;
+  height: 100%;
+  padding: 40px;
+  margin-bottom: 36px;
+  flex-direction: column;
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 4px;
+}
+
+.title-screen {
+  color: #444444;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+select {
+  width: 400px;
+  height: 40px;
+  margin-bottom: 16px;
+  border: 1px solid #a8a8a8;
+  box-sizing: border-box;
+  border-radius: 4px;
+  background: #ffffff;
+}
+
+select:disabled {
+  background: #f8f8f8;
+}
+
+select option {
+  color: #444444;
+  font-size: 14px;
+}

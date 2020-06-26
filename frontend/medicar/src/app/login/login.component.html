@@ -1,0 +1,34 @@
+<div class="center-container">
+
+  <div id="login-container">
+
+    <header>
+      <img src="assets/logo.svg" />
+    </header>
+
+    <section>
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmitForm()">
+          <input
+            type="text"
+            placeholder="Email"
+            formControlName="username"/>
+          <input
+            type="password"
+            placeholder="Senha"
+            formControlName="password"/>
+          <div class="checkbox-container">
+            <input type="checkbox" formControlName="remember" class="checkbutton" id="checkbox-remember">
+            <label for="checkbox-remember" class="checkbutton-label">Lembrar minha senha</label>
+          </div>
+          <div class="button-container">
+            <button class="btn btn-secondary" [routerLink]="'/register'" type="button">
+              Criar Conta
+            </button>
+            <button class="btn btn-primary" [disabled]="!loginForm.valid">
+              Acessar
+            </button>
+          </div>
+      </form>
+    </section>
+  </div>
+</div>

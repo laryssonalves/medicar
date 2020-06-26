@@ -1,0 +1,53 @@
+<div class="top-container">
+
+  <div id="home-container">
+
+    <header>
+
+      <img src="assets/logo-small.svg" />
+
+      <div id="user-menu">
+        <span id="user-name">Lucas Freitas</span>
+        <span id="btn-logout" (click)="doLogout()" >Desconectar</span>
+      </div>
+
+    </header>
+
+    <section>
+
+      <div id="grid">
+
+        <div class="grid-header">
+          <h3 class="title-screen">Consulta Clínica</h3>
+          <button class="btn btn-primary btn-add" [routerLink]="'/add-consulta'" >
+            <img src="assets/action-add.svg" />Nova Consulta
+          </button>
+        </div>
+
+        <div class="grid-container">
+          <div class="grid-item-header">Especialidade</div>
+          <div class="grid-item-header">Profissional</div>
+          <div class="grid-item-header">Data</div>
+          <div class="grid-item-header">Hora</div>
+          <div class="grid-item-header"></div>
+        </div>
+
+        <div class="grid-container grid-items" *ngFor="let consulta of consultas">
+          <div class="grid-item">{{ consulta.medico.especialidade.nome }}</div>
+          <div class="grid-item">{{ consulta.medico.nome }}</div>
+          <div class="grid-item">{{ consulta.dia | date:'dd/MM/yyyy' }}</div>
+          <div class="grid-item">{{ consulta.horario }}</div>
+          <div class="grid-item">
+            <button class="btn-delete" type="button" (click)="deleteConsulta(consulta.id)">
+              <img src="assets/action-delete.svg" /> <span>Desmarcar</span>
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+  </div>
+
+</div>
