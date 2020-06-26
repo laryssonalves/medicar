@@ -1,11 +1,15 @@
 # Medicar
 Sistema para gestão de consultas em uma clínica médica
 
-# Tecnologias
+## :rocket: Tecnologias
 
-Backend - Python com Django 3
+Projeto foi desenvolvido usando as seguintes tecnologias:
 
-Frontend - Typescript com Angular 9
+- [Python](https://www.python.org/)
+- [Django](https://docs.djangoproject.com/)
+- [DjangoRestFramework](https://www.django-rest-framework.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Angular](https://angular.io/)
 
 ## :information_source: Como usar
 Para clonar e rodar projeto você irá precisar do git para clonar, pip e virtualenv para criar a ambiente para rodar o backend e
