@@ -41,6 +41,9 @@ $ ./manage.py makemigrations && ./manage.py migrate
 # Inicie o servidor
 $ ./manage.py runserver
 
+# Crie seu super usuário
+$ ./manage.py createsuperuser
+
 Rodando em http://localhost:8000/
 ```
 
