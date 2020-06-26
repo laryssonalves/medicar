@@ -38,11 +38,11 @@ $ pip install -r requirements.txt
 # Crie e rode as migrations no banco
 $ ./manage.py makemigrations && ./manage.py migrate
 
-# Inicie o servidor
-$ ./manage.py runserver
-
 # Crie seu super usuário
 $ ./manage.py createsuperuser
+
+# Inicie o servidor
+$ ./manage.py runserver
 
 Rodando em http://localhost:8000/
 ```
