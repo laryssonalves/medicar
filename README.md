@@ -57,7 +57,7 @@ $ cd medicar/frontend
 $ cd medicar/
 
 # Inicie o frontend e abra em um navegador
-$ ng server --open
+$ ng serve --open
 
 Rodando em http://localhost:4200/
 ```
